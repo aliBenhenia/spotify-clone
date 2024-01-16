@@ -1,5 +1,3 @@
-Creating a clear and engaging README for your Spotify clone project is crucial to attract users and contributors. Below is a template for a README file. You can customize it according to your project specifics:
-
 ```markdown
 # SpotiClone
 
