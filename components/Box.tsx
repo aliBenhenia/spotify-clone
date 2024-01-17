@@ -6,7 +6,7 @@ interface box_props {
 }
 
 const Box: React.FC<box_props> = ({children, className}) => {
-   
+    
   return (
     <div className={twMerge(`
          bg-neutral-900

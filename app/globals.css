@@ -6,11 +6,6 @@ html, body, :root
 {
   --big:red
   background-color: red;
-  height: 100vh;
+  height: 100%;
   color-scheme: dark;
-}
-
-.mm
-{
-  color: var(--big);
 }

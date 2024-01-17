@@ -6,6 +6,7 @@ import { HiHome } from 'react-icons/hi';
 import { BiSearch } from 'react-icons/bi';
 import Box from './Box';
 import Side_bar_item from './Side_bar_item';
+import Library from './Library';
 
 interface Side_bar_props {
     children : React.ReactNode;
@@ -23,7 +24,7 @@ const  Side_bar : React.FC<Side_bar_props> = ({children})=>
             href : '/'
         },
         {
-            icon : HiHome,
+            icon : BiSearch,
             label : "Search",
             active : pathname !== '/search',
             href : '/search'
@@ -33,7 +34,7 @@ const  Side_bar : React.FC<Side_bar_props> = ({children})=>
 
     return (
         <div className="flex h-full">
-            <div className="
+            <div className="  
                     md-flex
                     flex-col
                     gap-y-2
@@ -58,7 +59,13 @@ const  Side_bar : React.FC<Side_bar_props> = ({children})=>
                         }
                     </div>  
                  </Box>
+                 <Box className="overflow-y-auto h-full mt-2">
+                    <Library size={25} className="text-neutral-400" />
+                 </Box>
             </div>
+            <main className="h-full flex-1 ">
+                    {children}
+            </main>
         </div>
     );
 }
