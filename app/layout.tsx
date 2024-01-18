@@ -7,7 +7,7 @@ import Side_bar from '@/components/Side_bar';
 
 
 const font = Figtree({ subsets: ['latin'] })
-const description_spotify = `enjoy with our music`;
+const description_spotify = `enjoy with our music!`;
 export const metadata: Metadata = {
   title: 'spotify clone ',
   description: description_spotify,
