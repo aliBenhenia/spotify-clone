@@ -5,7 +5,7 @@ interface box_props {
     className?: string;// optional
 }
 
-const Box: React.FC<box_props> = ({children, className}) => {
+const Box: React.FC<box_props> = ({children, className}) => { // const Box = ({children , className}:box_props)
     
   return (
     <div className={twMerge(`
