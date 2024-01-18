@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react'
 import {twMerge} from "tailwind-merge"
 interface box_props {
-    children : ReactNode;// required
+    children : ReactNode;// required..this represent jsx el of wrapped component
     className?: string;// optional
 }
 
