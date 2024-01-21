@@ -30,6 +30,7 @@ const Header : React.FC<header_props> = ({children, className })=>{
                 flex
                 items-center
                 justify-between
+                
             ">
                 <div className="  flex gap-x-4 items-center">
                     <button
@@ -69,6 +70,17 @@ const Header : React.FC<header_props> = ({children, className })=>{
                 <div className="flex md:hidden gap-x-2 items-center">
 
                 </div>
+                <div className="flex justify-between">
+  
+
+  
+  <button className="  text-gray-300 px-4 py-2 rounded-full font-bold mr-3">
+    Sign up
+  </button>
+  <button className="  bg-white text-black px-4 py-2 rounded-full font-bold">
+    Login
+  </button>
+</div>
             </div>
             {children}
         </div>
