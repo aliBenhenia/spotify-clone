@@ -36,6 +36,8 @@ const  Side_bar : React.FC<Side_bar_props> = ({children})=>
         <div className="flex h-full">
             <div className="  
                     md-flex
+                    hidden
+                    md:block
                     flex-col
                     gap-y-2
                     bg-black
