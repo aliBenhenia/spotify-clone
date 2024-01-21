@@ -31,7 +31,7 @@ const Header : React.FC<header_props> = ({children, className })=>{
                 items-center
                 justify-between
             ">
-                <div className="hidden md:flex gap-x-2 items-center">
+                <div className="  flex gap-x-4 items-center">
                     <button
                     onClick = {()=> router.back()}
 
@@ -41,7 +41,7 @@ const Header : React.FC<header_props> = ({children, className })=>{
                     flex
                     items-center
                     justify-center
-                    hover-opacity-75
+                    hover:opacity-100
                     transition
                     "
                     >
@@ -57,7 +57,7 @@ const Header : React.FC<header_props> = ({children, className })=>{
                     flex
                     items-center
                     justify-center
-                    hover-opacity-75
+                    hover:opacity-100
                     transition
                     "
                     >
@@ -70,7 +70,7 @@ const Header : React.FC<header_props> = ({children, className })=>{
 
                 </div>
             </div>
-            {/* {children} */}
+            {children}
         </div>
     );
 }
