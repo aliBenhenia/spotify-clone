@@ -2,7 +2,9 @@
 import {useRouter} from "next/navigation"
 import {twMerge} from "tailwind-merge"
 import {RxCaretLeft, RxCaretRight} from "react-icons/rx"
-
+import { HiHome } from "react-icons/hi";
+import { BiSearch } from "react-icons/bi";
+import Button from "./Button";
 
 interface header_props {
     children : React.ReactNode;
@@ -32,7 +34,7 @@ const Header : React.FC<header_props> = ({children, className })=>{
                 justify-between
                 
             ">
-                <div className="  flex gap-x-4 items-center">
+                <div className="hidden  md:flex gap-x-4 items-center">
                     <button
                     onClick = {()=> router.back()}
 
@@ -68,19 +70,50 @@ const Header : React.FC<header_props> = ({children, className })=>{
                     </button>
                 </div>
                 <div className="flex md:hidden gap-x-2 items-center">
-
+                    <button className="bg-white p-2 rounded-full flex item-center justify-center hover:opacity-70 transition">
+                        <HiHome className="text-black" size={30} />
+                    </button >
+                    <button className="bg-white p-2 rounded-full flex item-center justify-center hover:opacity-70 transition">
+                        <BiSearch className="text-black" size={30} />
+                    </button >
                 </div>
-                <div className="flex justify-between">
-  
-
-  
-  <button className="  text-gray-300 px-4 py-2 rounded-full font-bold mr-3">
-    Sign up
-  </button>
-  <button className="  bg-white text-black px-4 py-2 rounded-full font-bold">
-    Login
-  </button>
-</div>
+                <div className="flex item-center  justify-between gap-x-3">
+                     {/* <button className="  text-gray-300 px-4 py-2 rounded-full font-bold">
+                       Sign up
+                     </button>
+                     <button className="  bg-white text-black px-4 py-2 rounded-full font-bold">
+                       Login
+                     </button> */} 
+                   <>
+                     <div>
+                        <Button
+                        onClick={()=>{}}
+                       className="
+                            bg-transparent
+                            text-neutral-300
+                            font-medium
+                        "   
+                        >
+                            Sign up
+                        </Button>
+                       
+                     </div>
+                     <div>
+                        <Button
+                        onClick={()=>{}}
+                        className="
+                            bg-white
+                            px-6
+                            py-2
+                            font-medium
+                        "   
+                        >
+                            log in
+                        </Button>
+                       
+                     </div>
+                   </>
+                </div>
             </div>
             {children}
         </div>
