@@ -1,4 +1,5 @@
 "use client";
+
 import {useRouter} from "next/navigation"
 import {twMerge} from "tailwind-merge"
 import {RxCaretLeft, RxCaretRight} from "react-icons/rx"
@@ -6,12 +7,83 @@ import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
 import Button from "./Button";
 
+import React, { useState } from 'react';
+import { ConfigProvider, Modal, Space } from 'antd';
+import { createStyles, useTheme } from 'antd-style';
+const useStyle = createStyles(({ token }) => ({
+    'my-modal-body': {
+      background: token.blue1,
+      padding: token.paddingSM,
+    },
+    'my-modal-mask': {
+      boxShadow: `inset 0 0 15px #fff`,
+    },
+    'my-modal-header': {
+      borderBottom: `1px dotted ${token.colorPrimary}`,
+    },
+    'my-modal-footer': {
+      color: token.colorPrimary,
+    },
+    'my-modal-content': {
+      border: '1px solid #333',
+    },
+  }));
+
+
 interface header_props {
     children : React.ReactNode;
     className?: string;
 }
 
 const Header : React.FC<header_props> = ({children, className })=>{
+    const [isModalOpen, setIsModalOpen] = useState([false, false]);
+     const { styles } = useStyle();
+     const token = useTheme();
+
+     const toggleModal = (idx: number, target: boolean) => {
+       setIsModalOpen((p) => {
+         p[idx] = target;
+         return [...p];
+       });
+     };
+    //  const toggleModal = (idx: number, target: boolean) => {
+    //     setIsModalOpen((p) => {
+    //       p[idx] = target;
+    //       return [...p];
+    //     });
+    //   };
+    
+      const classNames = {
+        body: styles['my-modal-body'],
+        mask: styles['my-modal-mask'],
+        header: styles['my-modal-header'],
+        footer: styles['my-modal-footer'],
+        content: styles['my-modal-content'],
+      };
+    
+      const modalStyles = {
+        header: {
+          borderLeft: `5px solid ${token.colorPrimary}`,
+          borderRadius: 0,
+          paddingInlineStart: 5,
+        },
+        body: {
+          boxShadow: 'inset 0 0 5px #999',
+          borderRadius: 5,
+        },
+        mask: {
+          backdropFilter: 'blur(10px)',
+        },
+        footer: {
+          borderTop: '1px solid #333',
+        },
+        content: {
+          boxShadow: '0 0 30px #999',
+        },
+      };
+    
+
+
     const router = useRouter();
         const handle_logout = ()=>{
             // next
@@ -87,7 +159,7 @@ const Header : React.FC<header_props> = ({children, className })=>{
                    <>
                      <div>
                         <Button
-                        onClick={()=>{}}
+                       onClick={() => toggleModal(1, true)}
                        className="
                             bg-transparent
                             text-neutral-300
@@ -116,6 +188,16 @@ const Header : React.FC<header_props> = ({children, className })=>{
                 </div>
             </div>
             {children}
+
+        <Modal
+          title="Basic Modal"
+          open={isModalOpen[1]}
+          onOk={() => toggleModal(1, false)}
+          onCancel={() => toggleModal(1, false)}
+          
+        >
+           
+        </Modal>
         </div>
     );
 }
