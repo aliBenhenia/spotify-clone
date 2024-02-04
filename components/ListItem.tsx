@@ -15,7 +15,7 @@ export default function ListItem({name,image, href}:ListItem_props) {
  const router = useRouter();
  const onclick = ()=>{
     // add auth before change route
-    router.push(href);
+    // router.push(href);
     
  }
   return (
@@ -59,14 +59,14 @@ export default function ListItem({name,image, href}:ListItem_props) {
                         flex
                         items-center
                         justify-center
-                        bg-green-500
+                        bg-blue-600
                         p-3
                         group-hover:opacity-100
                         hover:scale-110
                         drop-shadow-md
                         right-4
                         group">
-                        <FaPlay className="text-black" />
+                        <FaPlay className="text-black " />
                     </div>
         </button>
     </div>

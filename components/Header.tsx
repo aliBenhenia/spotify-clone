@@ -46,12 +46,7 @@ const Header : React.FC<header_props> = ({children, className })=>{
          return [...p];
        });
      };
-    //  const toggleModal = (idx: number, target: boolean) => {
-    //     setIsModalOpen((p) => {
-    //       p[idx] = target;
-    //       return [...p];
-    //     });
-    //   };
+
     
       const classNames = {
         body: styles['my-modal-body'],
@@ -88,15 +83,21 @@ const Header : React.FC<header_props> = ({children, className })=>{
         const handle_logout = ()=>{
             // next
         }
+        const myStyle = {
+          background: 'linear-gradient(to bottom, #E8D33F, transparent)',
+          padding: '6px',
+          // Add any other styles you need
+        };
     return (
         <div 
         className = {twMerge(`
             h-fit
             bg-gradient-to-b
-            from-emerald-800
+            from-blue-800
             p-6
         
         `, className)}
+        // style={myStyle}
         >
             <div className="
                 w-full
